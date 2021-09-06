@@ -1,0 +1,33 @@
+using System;
+					
+public class Program
+{
+	  public static void Main()
+  {
+  	int antalTal;
+     float summa = 0;
+	 float input;
+	 float highest = 0;
+	 float lowest = 0;
+     Console.Write("Antal tal som ska matas in? ");
+     antalTal = int.Parse(Console.ReadLine());
+     for (int i=1; i <= antalTal; i++)
+     {
+     	Console.Write("Skriv värde " + i + ": ");
+          input = float.Parse(Console.ReadLine());
+          summa += input;
+		 
+		 if (input > highest){
+		 	highest = input;
+		 }
+		 
+		 if (input < lowest){
+		 	lowest = input;
+		 }
+}
+     Console.WriteLine("Medelvärdet är: " + (summa / antalTal));
+	 Console.WriteLine("lägsta: " + lowest);
+	 Console.WriteLine("högsta: " + highest);
+} 
+
+}
