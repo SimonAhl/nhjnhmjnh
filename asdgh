@@ -9,6 +9,7 @@ public class Program
 	 float input;
 	 float highest = 0;
 	 float lowest = 0;
+     bool once = true;
      Console.Write("Antal tal som ska matas in? ");
      antalTal = int.Parse(Console.ReadLine());
      for (int i=1; i <= antalTal; i++)
@@ -20,14 +21,22 @@ public class Program
 		 if (input > highest){
 		 	highest = input;
 		 }
-		 
-		 if (input < lowest){
-		 	lowest = input;
-		 }
-}
+
+        if (once == true){
+            lowest = input;
+            once = false;
+        }
+
+        if (input < lowest){
+            lowest = input;
+        }
+
+
+    }
+
+
      Console.WriteLine("Medelvärdet är: " + (summa / antalTal));
 	 Console.WriteLine("lägsta: " + lowest);
 	 Console.WriteLine("högsta: " + highest);
-} 
-
+  }
 }
